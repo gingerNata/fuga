@@ -1,0 +1,74 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: nata
+ * Date: 23.02.17
+ * Time: 18:03
+ */
+
+function fuga_block_info()
+{
+    $blocks = array();
+    $blocks['contactna_form'] = array(
+        'info' => t('Contact form'),
+        'cache' => DRUPAL_NO_CACHE,
+    );
+
+    return $blocks;
+}
+
+function fuga_block_view($delta = '')
+{
+    $block = array();
+    switch ($delta) {
+        case 'contactna_form':
+            // Create your block content here
+            $block['subject'] = t('Write to us');
+            $content = my_block_content();
+            $block['content'] = $content;
+            break;
+    }
+
+    return $block;
+}
+
+function my_block_content()
+{
+    module_load_include('inc', 'node', 'node.pages');
+    global $user;
+    $type = 'contact_form';
+
+    $node = new StdClass();
+    $node->uid = $user->uid;
+    $node->name = 'fds';
+    $node->type = $type;
+    $node->language = '';
+    node_object_prepare($node);
+
+    $form = drupal_get_form('contact_form_node_form', $node);
+    $output = drupal_render($form);
+    return $output;
+
+}
+function fuga_form_alter(&$form, &$form_state, $form_id){
+    switch ($form_id){
+        case "contact_form_node_form" :
+            $form['actions']['submit']['#value'] = t('Send');
+            $form['field_name']['und'][0]['value']['#title_display'] = 'invisible';
+            $form['field_name']['und'][0]['value']['#attributes']['placeholder'] = t('Your name');
+
+            $form['title']['#title_display'] = 'invisible';
+            $form['title']['#attributes']['placeholder'] = t('Theme');
+
+            $form['field_phone']['und'][0]['value']['#title_display'] = 'invisible';
+            $form['field_phone']['und'][0]['value']['#attributes']['placeholder'] = t('Your phone number');
+
+            $form['field_e_mail']['und'][0]['email']['#title_display'] = 'invisible';
+            $form['field_e_mail']['und'][0]['email']['#attributes']['placeholder'] = t('Your E-mail');
+
+            $form['body']['und'][0]['value']['#title_display'] = 'invisible';
+            $form['body']['und'][0]['value']['#attributes']['placeholder'] = t('Message');
+            break;
+    }
+
+}
