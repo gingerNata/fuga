@@ -4,8 +4,12 @@ version = @VERSION@
 core = 7.x
 
 stylesheets[all][] = style.css
+stylesheets[all][] = custom_style.css
+stylesheets[all][] = js/bxslider/dist/jquery.bxslider.css
 
 scripts[] = js/jquery.browser.min.js
+scripts[] = js/bxslider/dist/jquery.bxslider.js
+scripts[] = js/custom.js
 
 regions[header] = Header
 regions[navigation] = Navigation

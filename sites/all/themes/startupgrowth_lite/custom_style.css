@@ -1,0 +1,137 @@
+#logo img{
+    height: 88px;
+}
+#highlighted{
+    padding: 40px 0 30px 0;
+}
+
+.bxslider .views-row img {
+    width: 100%;
+    /*max-height: 600px;*/
+}
+.banner-area{
+    max-height: 450px;
+    position: relative;
+}
+.bx-wrapper {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.view .bx-wrapper .bx-pager {
+    bottom: 2em;
+}
+#block-block-1{
+    position: absolute;
+    padding: 12px;
+    background-color: rgba(14, 31, 67, 0.6);
+    top: 20%;
+    z-index: 5;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 1.4em;
+    width: 55%;
+    margin-left: 22.5%;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+}
+.title{
+   text-align: center;
+}
+
+.front h1.title {
+    margin-top: 40px;
+}
+
+.front .region-content {
+    padding: 28px 0 40px;
+}
+#block-views-content-block-1 h1{
+    text-align: center;
+}
+.advantages .views-row {
+    display: inline-block;
+    max-width: 200px;
+    max-height: 200px;
+    padding: 0 5px 10px 5px;
+}
+.advantages img{
+    height: 100px;
+    width: 100px;
+    margin: 0 10px 10px 9px;
+}
+
+.advantages .view-content{
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+#highlighted-bottom-transparent-bg {
+    background-color: rgba(175, 176, 255, 0.57) !important;
+}
+#highlighted-bottom {
+    padding: 50px 0 5px;
+}
+#contact-form-node-form{
+    text-align: center;
+}
+#edit-left, #edit-right {
+    border: none;
+    max-width: 450px;
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.for-what{
+    text-align: center;
+}
+.for-what  .views-field{
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+}
+.for-what .views-row{
+    margin: 30px auto;
+    font-size: 1.2em;
+}
+.for-what .views-row-odd .views-field-description{
+    max-width: 500px;
+    vertical-align: middle;
+}
+.for-what .views-row-even .views-field-description{
+    max-width: 500px;
+    vertical-align: middle;
+    margin-left: -90%;
+}
+.for-what h2{
+    font-size: 1.7em;
+}
+.for-what .views-field-nothing{
+    display: block;
+text-align: center;
+}
+.bord {
+    background: url("images/DecoBorderBottom.png") no-repeat center;
+    background-size: 100%;
+    max-width: 36%;
+    margin: 0 auto;
+    height: 35px;
+}
+
+/*video*/
+.page-node-56 .content{
+    text-align: center;
+}
+.page-node-56 .content .field-item{
+    margin: 20px 0;
+}
+
+/*photo*/
+.node-type-photo .field-item{
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+.node-type-photo .field-item img{
+   border: 8px solid rgba(42, 43, 69, 0.85);
+   margin: 10px;
+}
