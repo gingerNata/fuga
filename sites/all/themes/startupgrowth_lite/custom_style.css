@@ -21,6 +21,7 @@
 .view .bx-wrapper .bx-pager {
     bottom: 2em;
 }
+/*slyder*/
 #block-block-1{
     position: absolute;
     padding: 12px;
@@ -29,11 +30,14 @@
     z-index: 5;
     color: #ffffff;
     font-style: italic;
-    font-size: 1.4em;
+    font-size: 1.7vw;
     width: 55%;
     margin-left: 22.5%;
     text-shadow: 1px 1px 2px black;
     text-align: center;
+}
+.slider-title{
+    font-size: 2.7vw;
 }
 .title{
    text-align: center;
@@ -60,12 +64,17 @@
     width: 100px;
     margin: 0 10px 10px 9px;
 }
+.advantages img:hover{
+    padding: 4px;
+}
 
 .advantages .view-content{
     text-align: center;
     margin: 0 auto;
     width: 80%;
 }
+
+/*contact form*/
 #highlighted-bottom-transparent-bg {
     background-color: rgba(175, 176, 255, 0.57) !important;
 }
@@ -80,8 +89,12 @@
     max-width: 450px;
     margin: 0 15px;
     display: inline-block;
+    vertical-align: middle;
+
 }
 
+
+/*for what*/
 .for-what{
     text-align: center;
 }
@@ -100,14 +113,14 @@
 .for-what .views-row-even .views-field-description{
     max-width: 500px;
     vertical-align: middle;
-    margin-left: -90%;
+    float: left;
 }
 .for-what h2{
     font-size: 1.7em;
 }
 .for-what .views-field-nothing{
     display: block;
-text-align: center;
+    text-align: center;
 }
 .bord {
     background: url("images/DecoBorderBottom.png") no-repeat center;
@@ -126,12 +139,51 @@ text-align: center;
 }
 
 /*photo*/
+.node-type-photo .field-items{
+    text-align: center;
+    margin:  auto;
+}
 .node-type-photo .field-item{
     display: inline-block;
     text-align: center;
-    margin: 0 auto;
+    position: relative;
+    margin:  auto;
 }
 .node-type-photo .field-item img{
-   border: 8px solid rgba(42, 43, 69, 0.85);
-   margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 220px;
+    margin: 10px;
+}
+.node-type-photo .field-item img:hover{
+    border-radius: 4px;
+    padding: 0;
+    max-width: 220px;
+    border: 5px solid rgb(42, 43, 69);
+    margin: 10px;
+}
+.node-type-photo .field-item a:hover:after{
+    content: attr(title);
+    color: white;
+    background-color: rgba(42, 43, 69, 0.85);
+    position: absolute;
+    bottom: -10px;
+    margin: 10px;
+    padding-top: 5px;
+    width: 220px;
+    min-height: 35px;
+    font-size: 1.2vw;
+    font-style: italic;
+    left: 0;
+}
+
+
+/*footer*/
+#block-block-4{
+    float: right;
+}
+.captcha {
+    width: 19.8em;
+    margin: 0 auto;
 }

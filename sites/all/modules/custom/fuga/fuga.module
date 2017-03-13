@@ -66,20 +66,11 @@ function fuga_form_alter(&$form, &$form_state, $form_id)
             $form['left']['title'] = $form['title'];
             $form['title'] = array('#language' => NULL);
 
-            $form['field_name']['und'][0]['value']['#title_display'] = 'invisible';
-            $form['field_name']['und'][0]['value']['#attributes']['placeholder'] = t('Your name');
-            $form['left']['field_name'] = $form['field_name'];
-            $form['field_name'] = array('#language' => NULL);
 
             $form['field_phone']['und'][0]['value']['#title_display'] = 'invisible';
             $form['field_phone']['und'][0]['value']['#attributes']['placeholder'] = t('Your phone number');
             $form['left']['field_phone'] = $form['field_phone'];
             $form['field_phone'] = array('#language' => NULL);
-
-            $form['field_e_mail']['und'][0]['email']['#title_display'] = 'invisible';
-            $form['field_e_mail']['und'][0]['email']['#attributes']['placeholder'] = t('Your E-mail');
-            $form['left']['field_e_mail'] = $form['field_e_mail'];
-            $form['field_e_mail'] = array('#language' => NULL);
 
             $form['body']['und'][0]['value']['#title_display'] = 'invisible';
             $form['body']['und'][0]['value']['#attributes']['placeholder'] = t('Message');

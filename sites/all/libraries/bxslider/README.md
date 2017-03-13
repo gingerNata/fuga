@@ -4,7 +4,7 @@ https://github.com/stevenwanderski/bxslider-4/issues/1095
 
 ---
 
-#bxSlider 4.2.7
+#bxSlider 4.2.12
 ##The fully-loaded, responsive jQuery content slider
 
 ###Why should I use this slider?
@@ -637,6 +637,21 @@ Everyone is welcome to help [contribute](CONTRIBUTING.md) and improve this proje
 * Fixing [issues](https://github.com/roots/roots/issues)
 
 ## Changelog
+
+### Version 4.2.12
+* Fixes auto control theme
+
+### Version 4.2.11
+* Removes auto-centering for sliders with no pager or controls
+
+### Version 4.2.10
+* Bumps npm and bower versions
+
+### Version 4.2.9
+* Removes node engine version requirement
+
+### Version 4.2.8
+* Removes auto-centering from the theme file (`jquery.bxslider.css`)
 
 ### Version 4.2.7
 * Allows new version to be published to NPM
