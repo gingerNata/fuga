@@ -6,83 +6,81 @@
  * Time: 18:03
  */
 
-function fuga_block_info()
-{
-    $blocks = array();
-    $blocks['contactna_form'] = array(
-        'info' => t('Contact form'),
-        'cache' => DRUPAL_NO_CACHE,
-    );
+function fuga_block_info() {
+  $blocks = array();
+  $blocks['contactna_form'] = array(
+    'info' => t('Contact form'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
 
-    return $blocks;
+  return $blocks;
 }
 
-function fuga_block_view($delta = '')
-{
-    $block = array();
-    switch ($delta) {
-        case 'contactna_form':
-            // Create your block content here
-            $block['subject'] = t('Write to us');
-            $content = my_block_content();
-            $block['content'] = $content;
-            break;
-    }
+function fuga_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'contactna_form':
+      // Create your block content here
+      $block['subject'] = t('Write to us');
+      $content = my_block_content();
+      $block['content'] = $content;
+      break;
+  }
 
-    return $block;
+  return $block;
 }
 
-function my_block_content()
-{
-    module_load_include('inc', 'node', 'node.pages');
-    global $user;
-    $type = 'contact_form';
+function my_block_content() {
+  module_load_include('inc', 'node', 'node.pages');
+  global $user;
+  $type = 'contact_form';
 
-    $node = new StdClass();
-    $node->uid = $user->uid;
-    $node->type = $type;
-    $node->language = '';
-    node_object_prepare($node);
+  $node = new StdClass();
+  $node->uid = $user->uid;
+  $node->type = $type;
+  $node->language = '';
+  node_object_prepare($node);
 
-    $form = drupal_get_form('contact_form_node_form', $node);
-    $output = drupal_render($form);
-    return $output;
+  $form = drupal_get_form('contact_form_node_form', $node);
+  $output = drupal_render($form);
+  return $output;
 
 }
-function fuga_form_alter(&$form, &$form_state, $form_id)
-{
-    switch ($form_id) {
-        case "contact_form_node_form" :
-            $form['actions']['submit']['#value'] = t('Send');
 
-            $form['left'] = array(
-                '#type' => 'fieldset',
-            );
-            $form['right'] = array(
-                '#type' => 'fieldset',
-            );
-            $form['title']['#title_display'] = 'invisible';
-            $form['title']['#attributes']['placeholder'] = t('Theme');
-            $form['left']['title'] = $form['title'];
-            $form['title'] = array('#language' => NULL);
+function fuga_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case "contact_form_node_form" :
+      $form['actions']['submit']['#value'] = t('Send');
+
+      $form['left'] = array(
+        '#type' => 'fieldset',
+      );
+      $form['right'] = array(
+        '#type' => 'fieldset',
+      );
+      $form['title']['#title_display'] = 'invisible';
+      $form['title']['#attributes']['placeholder'] = t('Theme');
+      $form['left']['title'] = $form['title'];
+      $form['title'] = array('#language' => NULL);
 
 
-            $form['field_phone']['und'][0]['value']['#title_display'] = 'invisible';
-            $form['field_phone']['und'][0]['value']['#attributes']['placeholder'] = t('Your phone number');
-            $form['left']['field_phone'] = $form['field_phone'];
-            $form['field_phone'] = array('#language' => NULL);
+      $form['field_phone']['und'][0]['value']['#title_display'] = 'invisible';
+      $form['field_phone']['und'][0]['value']['#attributes']['placeholder'] = t('Your phone number');
+      $form['left']['field_phone'] = $form['field_phone'];
+      $form['field_phone'] = array('#language' => NULL);
 
-            $form['body']['und'][0]['value']['#title_display'] = 'invisible';
-            $form['body']['und'][0]['value']['#attributes']['placeholder'] = t('Message');
-            $form['right']['body'] = $form['body'];
-            $form['body'] = array('#language' => NULL);
-            $form['actions']['submit']['#submit'] = array('fuga_form_submit');
-            break;
-    }
+      $form['body']['und'][0]['value']['#title_display'] = 'invisible';
+      $form['body']['und'][0]['value']['#attributes']['placeholder'] = t('Message');
+      $form['right']['body'] = $form['body'];
+      $form['body'] = array('#language' => NULL);
+      $form['actions']['submit']['#submit'] = array('fuga_form_submit');
+      break;
+  }
 }
-    function fuga_form_submit($form, &$form_state) {
-        // call default action
-    node_form_submit($form, $form_state);
+
+function fuga_form_submit($form, &$form_state) {
+  // call default action
+  node_form_submit($form, $form_state);
   // redirect back to the edit page for this node
   $form_state['redirect'] = '<front>';
 

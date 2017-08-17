@@ -4,6 +4,20 @@
 #highlighted{
     padding: 40px 0 30px 0;
 }
+/*languages*/
+.block-locale ul{
+    width: 150px;
+}
+.block-locale li {
+    list-style: none;
+
+    display: inline-block;
+}
+.block-locale img{
+    border: 1px solid #c0c0c0;
+    margin: 3px;
+}
+
 
 .bxslider .views-row img {
     width: 100%;
@@ -50,7 +64,7 @@
 .front .region-content {
     padding: 28px 0 40px;
 }
-#block-views-content-block-1 h1{
+.main-text-block h1{
     text-align: center;
 }
 .advantages .views-row {
@@ -122,6 +136,12 @@
     display: block;
     text-align: center;
 }
+
+@media (max-width: 767px) {
+    .for-what .views-field-nothing{
+        display: none;
+    }
+}
 .bord {
     background: url("images/DecoBorderBottom.png") no-repeat center;
     background-size: 100%;
@@ -176,6 +196,89 @@
     font-size: 1.2vw;
     font-style: italic;
     left: 0;
+}
+/*blog*/
+.blog .views-row{
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.blog .views-field-view-node a{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px 23px;
+    background-color: #2a68af;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 1;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    min-width: 160px;
+    border: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    margin: 10px 0;
+    text-align: center;
+}
+.blog .views-field-view-node a:hover {
+    text-decoration: none;
+    background-color: #4187d1;
+    color: #ffffff;
+}
+
+a.button{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 15px 23px;
+    background-color: #2a68af;
+    color: #ffffff;
+    display: inline-block;
+    line-height: 1;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    min-width: 160px;
+    border: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    margin: 10px 0;
+    text-align: center;
+}
+a.button:hover {
+    text-decoration: none;
+    background-color: #4187d1;
+    color: #ffffff;
+}
+input[type=file] {
+    display: inline-block;
+}
+
+/*respond block*/
+.respond-block .views-field-field-avatar{
+    display: inline-block;
+}
+.respond-block .views-field-title{
+    display: inline-block;
+}
+.respond-block .views-field-created{
+    display: inline-block;
+    font-size: 0.7em;
+    font-style: italic;
+}
+.respond-block img{
+    margin: 15px;
+}
+
+.respond {
+    text-align: center;
 }
 
 
